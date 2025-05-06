@@ -24,9 +24,9 @@ func (s *Simulation) GenerateReport() {
 	sort.Slice(competitors, func(i, j int) bool {
 		ci, cj := competitors[i], competitors[j]
 		if ci.Status == "Finished" && cj.Status == "Finished" {
-			return ci.TotalTime() < cj.TotalTime() // Sort by total time
+			return ci.TotalTime() < cj.TotalTime()
 		}
-		return ci.Status == "Finished" // Finished competitors come first
+		return ci.Status == "Finished"
 	})
 
 	for _, comp := range competitors {
